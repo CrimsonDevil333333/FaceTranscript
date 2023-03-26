@@ -36,15 +36,14 @@ class CaptureFace:
                     pathFile = self.image_location + '/' + str(face_id) + ".jpg"
                     logging.warning(pathFile)
                     cv2.imwrite(pathFile, gray[y:y+h,x:x+w])
+                    image_bytes  = cv2.imencode('.jpg', gray[y:y+h,x:x+w])[1].tobytes()
                     cam.release()
                     cv2.destroyAllWindows()
-                    return "Image Saved"
                 else:
                     image_bytes  = cv2.imencode('.jpg', gray[y:y+h,x:x+w])[1].tobytes()
                     cam.release()
                     cv2.destroyAllWindows()
-                    return image_bytes
-                
+                return image_bytes
 
             k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
             if k == 27:
@@ -52,5 +51,5 @@ class CaptureFace:
 
 if __name__ == "__main__":
     camera = CaptureFace(save_image=True)
-    result = camera.capture_image("TestUser")
+    result = camera.capture_image("TestUser2")
     print(result)
