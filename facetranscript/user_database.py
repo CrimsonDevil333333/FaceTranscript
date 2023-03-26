@@ -1,4 +1,5 @@
 import sqlite3
+import logging
 class UserDatabase:
     def __init__(self, database_name:str = 'db.sqlite3', table_name:str = 'users') -> None:
         self.database_name = database_name
@@ -74,6 +75,25 @@ class UserDatabase:
                             WHERE USER_NAME is '{user_name}'
                                 ''')
         return self.connection.fetchall()
+    
+    def delete_user_data(self, user_name)-> bool:
+        try:
+            self.connection.execute(f'''
+                                DELETE
+                                FROM {self.table_name}
+                                WHERE USER_NAME is '{user_name}'
+                                    ''')
+            self.conn.commit()
+            return True
+        except Exception as e:
+            logging.error(str(e))
+            return False
+    
+    def drop_table(self)-> bool:
+        self.connection.execute(f'''DROP table {self.table_name}''')
+        self.conn.commit()
+        logging.info("Table dropped!")
+        return True
     
     def terminate_database_connection(self)-> None:
         self.connection.close()

@@ -27,4 +27,10 @@ class CaptureFaceInDataBase:
     def close_all_connections(self)-> None:
         self.user_database.terminate_database_connection()
 
+    def delete_user_data(self, username)->bool:
+        return self.user_database.delete_user_data(user_name=username)
+    
+    def drop_table(self)->bool:
+        return self.user_database.drop_table()
+
 

@@ -1,6 +1,8 @@
-# Face-Emotion-Identifier
+# FaceDatabse-Identifier
 A simple python package to identify the user on bases of there face and store there features in database
 
+## Prerequisite :
+* Must have GCC for dlib to work
 ## Sample Code : 
 ```py
 from facetranscript import *
@@ -15,4 +17,20 @@ if __name__=="__main__":
     print(face_list)
     # To terminate all connections (camera/database)
     face.close_all_connections()
+```
+
+### Delete user from database :
+- To delete a single user
+```py
+from facetranscript import *
+face = CaptureFaceInDataBase()
+# delete_user_data returns bool value if it is True user is deleted
+is_user_deleted = face.delete_user_data("TestUser")
+```
+- To drop the complete table
+```py
+from facetranscript import *
+face = CaptureFaceInDataBase()
+# is_table_dropped returns bool value if it is True table is deleted
+is_table_dropped = face.drop_table()
 ```
