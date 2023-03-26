@@ -1,4 +1,4 @@
-from face_transcript import UserDatabase, CaptureFace
+from facetranscript import UserDatabase, CaptureFace
 class CaptureFaceInDataBase:
     def __init__(self, database_name:str = 'db.sqlite3',
                 table_name:str = 'users', save_image: bool= False, image_location:str="dataset",
