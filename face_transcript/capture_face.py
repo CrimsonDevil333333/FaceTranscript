@@ -3,7 +3,8 @@ import logging
 import os
 
 class CaptureFace:
-    def __init__(self, save_image : bool = False, image_location : str = 'dataset', haarcascade_frontalface_location : str = './haarcascade_frontalface_default.xml') -> None:
+    def __init__(self, save_image : bool = False, image_location : str = 'dataset', 
+                haarcascade_frontalface_location : str = './haarcascade_frontalface_default.xml') -> None:
         self.save_image = save_image # if save_image is set to False it will return image bytes 
         self.image_location = image_location # only use when save_image flag is set to True
         self.haarcascade_frontalface_location = haarcascade_frontalface_location # By default it will search on place where you are importing this class

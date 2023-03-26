@@ -38,8 +38,10 @@ class UserDatabase:
         except Exception as e:
             if 'UNIQUE constraint failed' in str(e):
                 print(str(e) + " : Enter new user_name")
+                raise ValueError("Enter new user_name")
             else:
                 print(e)
+                raise KeyError(str(e))
     
     def insert_user_data_no_image(self, user_name:str, image_bytes:bytes)->None:
         user_image = image_bytes
@@ -51,8 +53,10 @@ class UserDatabase:
         except Exception as e:
             if 'UNIQUE constraint failed' in str(e):
                 print(str(e) + " : Enter new user_name")
+                raise ValueError("Enter new user_name")
             else:
                 print(e)
+                raise KeyError(str(e))
     
     def get_all_user_data(self) -> list:
         self.connection.execute(f'''

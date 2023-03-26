@@ -1,2 +1,3 @@
 from face_transcript.user_database import UserDatabase
 from face_transcript.capture_face import CaptureFace
+from face_transcript.store_catured_image import CaptureFaceInDataBase
