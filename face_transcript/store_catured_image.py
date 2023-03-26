@@ -11,5 +11,7 @@ class CaptureFaceInDataBase:
         self.capture_face = CaptureFace(save_image=save_image, image_location=image_location, 
                                         haarcascade_frontalface_location=haarcascade_frontalface_location)
         
-    def take_photo(self, username, databasename ):
+        self.save_image = save_image
+        
+    def take_photo(self, username ):
         pass

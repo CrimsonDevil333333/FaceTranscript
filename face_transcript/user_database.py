@@ -41,6 +41,19 @@ class UserDatabase:
             else:
                 print(e)
     
+    def insert_user_data_no_image(self, user_name:str, image_bytes:bytes)->None:
+        user_image = image_bytes
+        data_tuple = (user_name, user_image)
+        try:
+            self.connection.execute(self.sqlite_insert_blob_query, data_tuple)
+            self.conn.commit()
+            print("Image and file inserted successfully as a BLOB into a table")
+        except Exception as e:
+            if 'UNIQUE constraint failed' in str(e):
+                print(str(e) + " : Enter new user_name")
+            else:
+                print(e)
+    
     def get_all_user_data(self) -> list:
         self.connection.execute(f'''
                             SELECT
