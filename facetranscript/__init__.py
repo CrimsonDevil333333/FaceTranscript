@@ -1,3 +1,4 @@
 from facetranscript.user_database import UserDatabase
 from facetranscript.capture_face import CaptureFace
 from facetranscript.store_catured_image import CaptureFaceInDataBase
+from facetranscript.face_set import FaceTrainer

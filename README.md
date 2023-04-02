@@ -4,8 +4,9 @@ A simple python package to identify the user on bases of there face and store th
 ## Prerequisite :
 * Must have GCC for dlib to work
 ## Sample Code : 
+### Create Database/Table and insert user and users image :
 ```py
-from facetranscript import *
+from facetranscript import CaptureFaceInDataBase
 
 if __name__=="__main__":
     face = CaptureFaceInDataBase()
@@ -22,14 +23,14 @@ if __name__=="__main__":
 ### Delete user from database :
 - To delete a single user
 ```py
-from facetranscript import *
+from facetranscript import CaptureFaceInDataBase
 face = CaptureFaceInDataBase()
 # delete_user_data returns bool value if it is True user is deleted
 is_user_deleted = face.delete_user_data("TestUser")
 ```
 - To drop the complete table
 ```py
-from facetranscript import *
+from facetranscript import CaptureFaceInDataBase
 face = CaptureFaceInDataBase()
 # is_table_dropped returns bool value if it is True table is deleted
 is_table_dropped = face.drop_table()

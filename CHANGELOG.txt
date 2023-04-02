@@ -12,3 +12,7 @@ Change Log
 0.0.3 (26/03/2023)
 -------------------
 - Added delete and Drop old table options
+
+0.0.4 (26/03/2023)
+-------------------
+- 

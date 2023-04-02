@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name = "facetranscript",
-    version = "0.0.3",
+    version = "0.0.4",
     author = "Satyaa Goyal",
     author_email = "satya.goyal333333@gmail.com",
     description = "To Capture user face and store it in database",

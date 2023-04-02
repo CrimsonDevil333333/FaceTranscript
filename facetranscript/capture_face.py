@@ -5,6 +5,18 @@ import os
 class CaptureFace:
     def __init__(self, save_image : bool = False, image_location : str = 'dataset', 
                 haarcascade_frontalface_location : str = './haarcascade_frontalface_default.xml') -> None:
+        """
+        A class that captures an image of a face using the computer's camera.
+
+        Parameters:
+        - `save_image`: A boolean flag that determines whether to save the captured image or return it as bytes. If set to False, the image will be returned as bytes.
+        - `image_location`: A string that specifies the location where the captured image will be saved. This parameter is only used when `save_image` is set to True.
+        - `haarcascade_frontalface_location`: A string that specifies the location of the Haar Cascade classifier file used for face detection.
+
+        Methods:
+        - `capture_image(user_name)`: This method captures an image of a face and returns it as bytes. The method takes one parameter:
+            - `user_name`: A string that specifies the name of the user whose face is being captured.
+        """
         self.save_image = save_image # if save_image is set to False it will return image bytes 
         self.image_location = image_location # only use when save_image flag is set to True
         self.haarcascade_frontalface_location = haarcascade_frontalface_location # By default it will search on place where you are importing this class
